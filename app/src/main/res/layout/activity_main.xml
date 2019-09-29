@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orangebackground">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:text="Timezones"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:fontFamily="@font/pathway_gothic_one"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <ImageButton
+        android:id="@+id/refreshbutton"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_margin="16sp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reload" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginLeft="16sp"
+        android:layout_marginRight="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_weight="1">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/sydney_time"
+                layout="@layout/city_item" />
+
+            <include
+                android:id="@+id/newyork_time"
+                layout="@layout/city_item" />
+
+            <include
+                android:id="@+id/tokyo_time"
+                layout="@layout/city_item" />
+
+            <include
+                android:id="@+id/london_time"
+                layout="@layout/city_item" />
+
+            <include
+                android:id="@+id/losangeles_time"
+                layout="@layout/city_item" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_weight="1">
+
+        <Button
+            android:id="@+id/Button12H"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="#aaff7a01"
+            android:text="12H"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/Button24H"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="#aaff7a01"
+            android:text="24H"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
